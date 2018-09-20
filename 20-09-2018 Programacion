@@ -1,0 +1,123 @@
+
+//TEMA1 EJERCICIOS DE CLASE 1. 20/9/2018
+//JORGE MARTÍN GARCÍA
+
+public class T1E1 {
+	/**
+	* Operaciones aritméticas .
+	*/
+	public static void main (String[] args){
+	/*		
+		int n1= 50, n2 = 30;
+		//boolean suma = 0;
+		int suma = 0;
+		suma = n1+n2;
+		System.out.println("La suma es : " + suma);
+		System.out.println("Aquí está el ejercicio 2");
+		//Esto llama al método ejercicio3
+		ejercicio3();
+		//Esto llama al método ejercicio4
+		ejercicio4();
+	*/
+		//Esto llama al método ejercicio5
+		ejercicio5();
+	}
+
+	/*
+	Este ejercicio intercambia el valor de dos variables
+	*/
+	public static void ejercicio3 (){
+	//Declaro las variables, todas tipo int, pero vale cualquier tipo
+
+		int a, b, aux;
+		a = 1;
+		b = 2;
+		aux = 0;
+	//Saco por pantalla los valores para que se vea
+		System.out.println("Sin intercambiar");
+		System.out.println("a = " + a);
+		System.out.println("b = " + b);
+		System.out.println("aux = " + aux);
+
+	//Para cambiarlas, primero pongo el valor de una en una variable
+	//auxiliar
+		aux = a;
+	//luego sobreescribo la que he guardado en aux
+		a = b;
+	//y sobreescribo la que ya he copiado en el paso anterior desde aux (XD)
+		b = aux;
+	//por último, pongo el valor inicial en aux
+		aux = 0;
+		
+	//Imprimo las variables intercambiadas para ver si ha funcionado
+		System.out.println("Intercambiadas");
+		System.out.println("a = " + a);
+		System.out.println("b = " + b);
+		System.out.println("aux = " + aux);
+	}
+
+	/*
+	Este ejercicio pregunta qué errores hay en las operaciones
+	*/
+	public static void ejercicio4 () {
+	
+	/*programa copiado
+		int a = 10. b = 3. c = 1, d.
+		e:
+		float x.
+		y:
+		x = a / b;
+		y = (float) a / b:
+		*/
+
+	/*programa corregido*/
+
+	//No hay puntos y comas en ningún sitio. Las variables, si no se
+	//declaran de una en una, tienen que ir separadas por comas.
+	//Las variables c, d y e no se usan nunca así que las borro.
+	
+		int a = 10, b = 3;
+	//No pasa nada porque esté en líneas distintas, compila pero es feo.
+		float x,y;
+	//Aquí habría que tener cuidado con que el valor de b no sea 0
+		x = a / b;
+	//Pongo unos paréntesis porque no estoy seguro de si el cast se hace
+	//únicamente a la siguiente variable o a la resolución de la operación.
+	//Así, me aseguro que se transforme en float la operación completa.
+		y = (float) (a / b);
+	//Compila aunque no he puesto comprobaciones así que suponemos que va ok.
+
+	}
+
+	/*
+	Este ejercicio pide escribir un programa que evalúe una ecuación	
+	*/
+	public static void ejercicio5 () {
+	
+	//ECUACION: ax^3 +bx^2 -cx+3
+	//Valores para evaluar: a=5, b=-1.7, c=2 y x= 10.5
+
+	//Lo voy a hacer todo con float porque estamos trabajando en /R
+	
+		float a, b, c, x;
+		float aux1, aux2, aux3, suma;
+	
+	//declaro variables
+		a = 5f;
+		b = -1.7f;
+		c = 2f;
+		x = 10.5f;
+	//Operaciones para evaluar
+	 aux1 = a*(x*x*x);
+	 aux2 = b*(x*x);
+	 aux3 = c*x;
+	//Esta es la evaluación
+		suma = aux1+aux2+aux3+3f;
+	//Esto es una estructura de control, en caso de que el resultado
+	//sea 0, se considera que es raíz. En caso contrario, no. 
+		if (suma == 0f) 
+			System.out.println("El valor 10.5 es raíz de esa ecuación");
+		else 	System.out.println("El valor 10.5 NO es raíz de esa 				ecuación");
+		
+	}
+}
